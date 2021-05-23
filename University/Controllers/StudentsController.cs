@@ -8,7 +8,7 @@ namespace University.Controllers
 {
   public class StudentController : Controller
   {
-    private readonly ToDoListContext _db;
+    private readonly UniversityContext _db;
 
     public StudentsController(UniversityContext db)
     {
