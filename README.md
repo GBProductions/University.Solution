@@ -5,7 +5,7 @@
 </div>
 
 <h3 align="center">Description of application, date-2021</h3>
-<h4 align="center"> By Saoud Rana</h4>
+<h4 align="center"> By Garret Brown and Sofia Acosta</h4>
 
 ## Description
 
