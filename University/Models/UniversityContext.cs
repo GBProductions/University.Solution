@@ -1,13 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ReplaceWithProjectName.Models
+namespace University.Models
 {
-  public class ReplaceWithProjectNameContext : DbContext
+  public class UniversityContext : DbContext
   {
-    public virtual DbSet<ReplaceWithParentClassName> ReplaceWithParentClassName { get; set; }
-    public DbSet<ReplaceWithChildClassName> ReplaceWithChildClassName { get; set; }
 
-    public ReplaceWithProjectNameContext(DbContextOptions options) : base(options) { }
+    public virtual DbSet<Student> Students { get; set;}
+    public DbSet<Course> Courses { get; set;}
+    public DbSet<StudentCourse> StudentCourse { get; set;}
+    
+    
+    public UniversityContext(DbContextOptions options) : base(options) { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
