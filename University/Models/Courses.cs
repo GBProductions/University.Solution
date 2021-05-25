@@ -6,7 +6,7 @@ namespace University.Models
     {
         public Course()
         {
-            this.JoinEntities = new HashSet<Student>();
+            this.JoinEntities = new HashSet<StudentCourse>();
         }
 
         public int CourseId { get; set; }

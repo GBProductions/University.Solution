@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using University.Models;
 
-namespace ReplaceWithProjectName
+namespace University
 {
   public class Startup
   {
@@ -25,7 +25,7 @@ namespace ReplaceWithProjectName
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-        .AddDbContext<UniversityNameContext>(options => options
+        .AddDbContext<UniversityContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
     }
 

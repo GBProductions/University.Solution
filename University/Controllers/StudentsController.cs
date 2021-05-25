@@ -10,7 +10,7 @@ namespace University.Controllers
   {
     private readonly UniversityContext _db;
 
-    public StudentsController(UniversityContext db)
+    public StudentController(UniversityContext db)
     {
       _db = db;
     }
