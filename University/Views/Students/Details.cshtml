@@ -10,19 +10,19 @@
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This category does not contain any items</p>
+  <p>This student does not contain any course</p>
 }
 else
 {
-  <h4>Items the category contains:</h4>
+  <h4>Courses the student contains:</h4>
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@join.Item.Description</li>
+    <li>@join.Course.Name</li>
   }
   </ul>
 }
 
 <p>@Html.ActionLink("Back to categories", "Index")</p>
-<p>@Html.ActionLink("Edit Category", "Edit", new { id = Model.CategoryId })</p>
-<p>@Html.ActionLink("Delete Category", "Delete", new { id = Model.CategoryId })</p>
+<p>@Html.ActionLink("Edit Category", "Edit", new { id = Model.StudentId })</p>
+<p>@Html.ActionLink("Delete Category", "Delete", new { id = Model.StudentId })</p>
