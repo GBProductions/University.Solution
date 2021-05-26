@@ -48,6 +48,28 @@ namespace University.Controllers
       return View(thisStudent);
     }
 
+    [HttpPost]
+    public ActionResult Edit(Student student)
+    {
+      _db.Entry(student).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Delete(int id)
+    {
+      var thisCategory = _db.Students.FirstOrDefault(category => category.StudentId == id);
+      return View(thisCategory);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisCategory = _db.Students.FirstOrDefault(category => category.StudentId == id);
+      _db.Students.Remove(thisCategory);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
   }
 }

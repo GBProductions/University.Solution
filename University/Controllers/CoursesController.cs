@@ -17,23 +17,28 @@ namespace University.Controllers
 
     public ActionResult Index()
     {
-      List<Course> model = _db.Courses.ToList();
-      return View(model);
+      return View(_db.Courses.ToList());
     }
 
     public ActionResult Create()
     {
+      ViewBag.StudentId = new SelectList(_db.Students, "StudentId", "Name");
       return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Course course)
+    public ActionResult Create(Course course, int StudentId)
     {
       _db.Courses.Add(course);
       _db.SaveChanges();
+      if (StudentId != 0)
+      {
+        _db.StudentCourse.Add(new StudentCourse() { StudentId = StudentId, CourseId = course.CourseId });
+      }
+      _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+    
     public ActionResult Details(int id)
     {
       var thisCourse = _db.Courses
